@@ -42,7 +42,20 @@ class Application < Sinatra::Base
 
   #yield keyword is where the template is passed through
 
-  get '/monstas/:name' do
-    erb :monstas, { :locals => params, :layout => :layout }
+  # get '/monstas/:name' do
+  #   erb :monstas, { :locals => params, :layout => :layout }
+  # end
+  #
+  # #we can also even omit the layout option key because Sinatra assumes we
+  # #want a layout and finds one in the views directory:
+  #
+  # get '/monstas/:name' do
+  #   erb :monstas, { :locals => params }
+  # end
+
+  #instance variables save typing and are the 'Rails way' of passing data to templates(views)
+  get 'monstas/:name' do
+    @name = params["name"]
+    erb :monstas
   end
 end
