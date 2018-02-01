@@ -18,6 +18,8 @@ class Application < Sinatra::Base
   #   #params.inspect
   # end
 
+  #erb method hides all the details of executing
+  #the template from us, and also accepts a template.
   #Sinatra also has built-in support for ERB templates
   #(“views”). We can achieve exactly the same thing without spelling
   #out the ERB.new(...).result(binding) noise
